@@ -1,0 +1,32 @@
+version: "3.2"
+
+services:
+  master:
+    image: container-internal.pupper.nl:5000/jenkins_master:1.0.5
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    networks:
+      - jenkins
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+  slave:
+    image: container-internal.pupper.nl:5000/jenkins_slave:1.0.0
+    networks:
+      - jenkins
+    deploy:
+      mode: replicated
+      replicas: 5
+    environment:
+      - JENKINS_MASTER_LOCATION=http://container-internal.pupper.nl:8081/
+
+networks:
+  jenkins:
+    driver: overlay
+
+volumes:
+  jenkins_home:
+
+
+
