@@ -12,7 +12,7 @@ services:
       - jenkins_home:/var/jenkins_home
 
   slave:
-    image: container-internal.pupper.nl:5000/jenkins_slave:1.0.0
+    image: container-internal.pupper.nl:5000/jenkins_slave:1.1.0
     networks:
       - jenkins
     deploy:
