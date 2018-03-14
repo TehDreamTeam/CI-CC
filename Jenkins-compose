@@ -1,23 +1,31 @@
-version: "3.2"
+version: "3.4"
 
 services:
   master:
-    image: container-internal.pupper.nl:5000/jenkins_master:1.0.5
+    image: container-internal.pupper.nl:5000/jenkins_master:2.0.0
     ports:
       - "8081:8080"
       - "50000:50000"
+    configs:
+      - source: jenkins_master-1.0
+        target: /var/jenkins_home/config.json
+        uid: '1000'
+        gid: '1000'
+        mode: 0444
     networks:
       - jenkins
     volumes:
       - jenkins_home:/var/jenkins_home
 
   slave:
-    image: container-internal.pupper.nl:5000/jenkins_slave:1.1.0
+    image: container-internal.pupper.nl:5000/jenkins_slave:1.2.0
     networks:
       - jenkins
     deploy:
       mode: replicated
       replicas: 5
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - JENKINS_MASTER_LOCATION=http://container-internal.pupper.nl:8081/
 
@@ -27,6 +35,7 @@ networks:
 
 volumes:
   jenkins_home:
-
-
-
+  
+configs:
+  jenkins_master-1.0:
+    external: true
