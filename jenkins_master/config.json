@@ -1,0 +1,118 @@
+{
+  "jenkins": {
+    "location": "http://987c3f8b.ngrok.io/",
+    "locale": "en-NL",
+    "remote_cli_enabled": false,
+    "credentials": [
+      {
+        "id": "GITHUB_SERVER_TOKEN",
+        "type": "secretText",
+        "scope": "global",
+        "text": "CHANGE_ME",
+        "description": "Contains the token used to connect to GitHub."
+      },
+      {
+        "id": "GITHUB_SERVER_USER_PASS",
+        "type": "usernamePassword",
+        "scope": "global",
+        "username": "CHANGE_ME",
+        "password": "CHANGE_ME",
+        "description": "Contains the username & password used to connect to GitHub."
+      },
+      {
+        "id": "SONAR_GIT_USER",
+        "type": "secretText",
+        "scope": "global",
+        "text": "TehMessiah",
+        "description": "Contains the git user used by SonarQube."
+      },
+      {
+        "id": "SONAR_GIT_TOKEN",
+        "type": "secretText",
+        "scope": "global",
+        "text": "CHANGE_ME",
+        "description": "Contains the token used by SonarQube to connect to GitHub."
+      }
+    ],
+    "jobs": [
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Common-Library",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Authentication-Service",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Registration-System",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Monitoring-Service",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Police-System",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Billing-System",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Government-System",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Simulation-Service",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "Authentication-Service",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
+      }
+    ]
+  },
+  "github": {
+    "authentication": {
+      "web_uri": "https://github.com",
+      "api_uri": "https://api.github.com",
+      "client_id": "CHANGE_ME",
+      "client_secret": "CHANGE_ME",
+      "oauth_scopes": "read:org,user:email",
+      "users": {
+        "admin": [
+          "beehivejava",
+          "isylwin"
+        ],
+        "normal": [
+          "ESD6-S65-3"
+        ]
+      }
+    },
+    "servers": [
+      {
+        "name": "Standard Github",
+        "api_url": "https://api.github.com",
+        "credential_id": "GITHUB_SERVER_TOKEN",
+        "manage_hooks": true
+      }
+    ]
+  },
+  "sonar": [
+    {
+      "server_name": "SonarQube - Infra",
+      "server_location": "http://cc.pupper.nl",
+      "server_token": "token"
+    }
+  ]
+}

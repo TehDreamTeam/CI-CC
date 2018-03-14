@@ -1,0 +1,6 @@
+blueocean:1.4.2
+locale:1.2
+github-oauth:0.29
+matrix-auth:2.2
+sonar:2.6.1
+swarm:3.10
