@@ -5,7 +5,7 @@ ENV JENKINS_SWARM_PLUGIN_VERSION 3.9
 ENV SONAR_SCANNER_VERSION 3.0.3.778
 
 USER root
-RUN apk update && apk add git
+RUN apk update && apk add git docker
 
 WORKDIR /opt
 RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip && \
