@@ -79,6 +79,11 @@
         "owner": "ESD6-S65-3",
         "repository": "Authentication-Service",
         "credentials_id": "GITHUB_SERVER_USER_PASS"
+      },
+      {
+        "owner": "ESD6-S65-3",
+        "repository": "International-System",
+        "credentials_id": "GITHUB_SERVER_USER_PASS"
       }
     ]
   },
